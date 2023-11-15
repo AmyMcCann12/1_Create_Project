@@ -1,14 +1,18 @@
 # {{PROBLEM}} Function Design Recipe
 
+As a user
+So that I can keep track of my tasks
+I want to check if a text includes the string #TODO
+
 ## 1. Describe the Problem
 
-As a user, unsure whether sentence starts with capital letter and ends with punctuation.
+Need to check if a given text includes a specific string 'TODO'
 
 ## 2. Design the Function Signature
 
-Function name: check_grammar
-Parameters: 1. Text
-Return value: True or False (Boolean)
+Function name: to_do_checker
+Parameters: string (text)
+Return value: Boolean (True if the text does include 'TODO', False otherwise)
 
 Side Effects:
 This function will not print anything of have any other side-effects
@@ -17,12 +21,17 @@ This function will not print anything of have any other side-effects
 
 _Make a list of examples of what the function will take and return._
 
-Empty string
-Sentence does not start with capital (but has punctuation) [. ? !]
-Sentence starts with capital (but no punctuation) 
-Sentence with no capital and no punctuation
-Sentence with incorrect puntuation
+1. If given an empty string, returns an error "No text has been inputted"
 
+test_to_do_checker("") => Error message
+
+2. If given a text with "TODO" included, returns True
+
+test_to_do_checker("TODO: Walk the Dog") => True
+
+3. If given a text without "TODO" included, returns False
+
+test_to_do_checker("Shopping List") => False
 
 _Encode each example as a test. You can add to the above list as you go._
 
